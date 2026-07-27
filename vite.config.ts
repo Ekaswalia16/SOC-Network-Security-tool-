@@ -5,7 +5,6 @@ import { dirname } from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-// Derive __dirname for ESM
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
@@ -13,7 +12,6 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // Stub out the Figma-only virtual module so local dev doesn't break
     {
       name: 'figma-stubs',
       resolveId(id) {
@@ -26,13 +24,24 @@ export default defineConfig({
       },
     },
   ],
-  server: { 
-    allowedHosts: ['.render.com'] // Added dot prefix so all subdomains on Render work
+
+  // For development (vite)
+  server: {
+    host: true,
+    allowedHosts: true,
   },
+
+  // For preview / production build serving (vite preview)
+  preview: {
+    host: true,
+    allowedHosts: true,
+  },
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+
   assetsInclude: ['**/*.svg', '**/*.csv'],
 })
