@@ -11,7 +11,7 @@ const __dirname = dirname(__filename)
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),  ],
+    tailwindcs  ],
 
   // For development (vite)
   server: {
