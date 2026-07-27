@@ -7,29 +7,21 @@ import react from '@vitejs/plugin-react'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcs  ],
+    tailwindcss(),
+  ],
 
   // For development (vite)
   server: {
     host: true,
-    allowedHosts: true,
+    allowedHosts: ['soc-network-security-tool.onrender.com'],
   },
 
   // For preview / production build serving (vite preview)
   preview: {
     host: true,
-    allowedHosts: true,
+    allowedHosts: ['soc-network-security-tool.onrender.com'],
   },
-
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
-    },
-  },
-
-  assetsInclude: ['**/*.svg', '**/*.csv'],
 })
