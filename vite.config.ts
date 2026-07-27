@@ -11,19 +11,7 @@ const __dirname = dirname(__filename)
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),
-    {
-      name: 'figma-stubs',
-      resolveId(id) {
-        if (id === 'figma:foundry-client-api') return id;
-        if (id.startsWith('figma:asset/')) return '\0figma-asset';
-      },
-      load(id) {
-        if (id === 'figma:foundry-client-api') return 'export default {}';
-        if (id === '\0figma-asset') return 'export default ""';
-      },
-    },
-  ],
+    tailwindcss(),  ],
 
   // For development (vite)
   server: {
