@@ -1,7 +1,8 @@
 
-  # SOC Network Security Tool
+  # NetInspect SOC Network Security Tool
+  This repository contains the source code for the SOC Network Security Tool, a comprehensive application for monitoring network traffic and identifying security threats
 
-  This is a code bundle for SOC Network Security Tool. The original project is available at https://www.figma.com/design/1PNZKf4pIBw99QY4pZbVfu/SOC-Network-Security-Tool.
+
 
   ## Running the code
 
