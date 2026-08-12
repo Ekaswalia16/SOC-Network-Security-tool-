@@ -8,6 +8,10 @@ export default defineConfig({
     react(),
     tailwindcss(),
     // Stub out the Figma-only virtual module so local dev doesn't break
+
+    preview: {
+    allowedHosts: ['soc-network-security-tool.onrender.com'],
+  },
     {
       name: 'figma-stubs',
       resolveId(id) {
